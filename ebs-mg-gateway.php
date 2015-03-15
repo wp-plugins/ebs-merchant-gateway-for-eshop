@@ -3,11 +3,11 @@
 Plugin Name: EBS Merchant Gateway For eShop
 Plugin URI: http://www.skrilleshopplugin.com/product/ebs-merchant-gateway-for-eshop/
 Description: EBS Merchant Gateway for eShop is an add-on plugin for eShop WordPress plugin which adds up additional merchant gateway namely "EBS" for all INDIAN & US currency based country eShop powered site owners.
-Version: 0.1
+Version: 0.1.1
 Author: L.CH.RAJKUMAR 
 Author URI: https://www.twitter.com/lchrajkumar
 
-    Copyright 2014 L.CH.RAJKUMAR  (email : l.ch.rajkumar@gmail.com)
+    Copyright 2014-2015 L.CH.RAJKUMAR  (email : l.ch.rajkumar@gmail.com)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -63,8 +63,8 @@ function eshop_show_ebs_response(){
 }
 //Scripts Enqueue
 function ebsgateway_adds_to_the_head(){
-wp_register_script( 'ebsminscriptjs', plugins_url( '/ebs-mg-gateway/jquery.min.js', __FILE__));
-wp_register_script( 'ebsscriptjs', plugins_url( '/ebs-mg-gateway/script.js', __FILE__));
+wp_register_script( 'ebsminscriptjs', plugins_url( '/ebs-merchant-gateway-for-eshop/jquery.min.js', __FILE__));
+wp_register_script( 'ebsscriptjs', plugins_url( '/ebs-merchant-gateway-for-eshop/script.js', __FILE__));
 wp_enqueue_script('jquery');
 wp_enqueue_script( 'ebsminscriptjs' );
 wp_enqueue_script( 'ebsscriptjs' );
@@ -83,8 +83,8 @@ function ebs_box($eshopoptions) {
         $eshopebs['mode']='';
 	}
 	//add the image
-	$eshopmerchantimgpath=WP_PLUGIN_DIR.'/ebs-mg-gateway/ebs.png';
-	$eshopmerchantimgurl=WP_PLUGIN_URL.'/ebs-mg-gateway/ebs.png';
+	$eshopmerchantimgpath=WP_PLUGIN_DIR.'/ebs-merchant-gateway-for-eshop/ebs.png';
+	$eshopmerchantimgurl=WP_PLUGIN_URL.'/ebs-merchant-gateway-for-eshop/ebs.png';
 	$dims[3]='';
 	if(file_exists($eshopmerchantimgpath))
 	$dims=getimagesize($eshopmerchantimgpath);
@@ -122,7 +122,7 @@ function eshopebs($eshopaction){
 	* adding the necessary link for the instant payment notification of your gateway
 	*/
 	if($eshopaction=='ebsipn'){
-		include_once WP_PLUGIN_DIR.'/ebs-mg-gateway/ipn.php';
+		include_once WP_PLUGIN_DIR.'/ebs-merchant-gateway-for-eshop/ipn.php';
 	}
 }
 
@@ -131,8 +131,8 @@ function ebsimg($array){
 	/*
 	* adding the image for this gateway, for use on the front end of the site
 	*/
-	$array['path']=WP_PLUGIN_DIR.'/ebs-mg-gateway/ebs.png';
-	$array['url']=WP_PLUGIN_URL.'/ebs-mg-gateway/ebs.png';
+	$array['path']=WP_PLUGIN_DIR.'/ebs-merchant-gateway-for-eshop/ebs.png';
+	$array['url']=WP_PLUGIN_URL.'/ebs-merchant-gateway-for-eshop/ebs.png';
 	return $array;
 }
 add_filter('eshop_mg_inc_path','ebspath',10,2);
@@ -141,7 +141,7 @@ function ebspath($path,$paymentmethod){
 	* adding another necessary link for the instant payment notification of your gateway
 	*/
 	if($paymentmethod=='ebs')
-		return WP_PLUGIN_DIR.'/ebs-mg-gateway/ipn.php';
+		return WP_PLUGIN_DIR.'/ebs-merchant-gateway-for-eshop/ipn.php';
 	return $path;
 }
 add_filter('eshop_mg_inc_idx_path','ebsidxpath',10,2);
@@ -150,7 +150,7 @@ function ebsidxpath($path,$paymentmethod){
 	* adding the necessary link to the class for this gateway
 	*/
 	if($paymentmethod=='ebs')
-		return WP_PLUGIN_DIR.'/ebs-mg-gateway/ebs-class.php';
+		return WP_PLUGIN_DIR.'/ebs-merchant-gateway-for-eshop/ebs-class.php';
 	return $path;
 }
 //message on fail.
