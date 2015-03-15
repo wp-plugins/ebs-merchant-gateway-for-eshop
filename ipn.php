@@ -15,9 +15,9 @@ $_POST=sanitise_array($_POST);
 /*
 * reqd info for your gateway
 */
-include_once (WP_PLUGIN_DIR.'/ebs-mg-gateway/ebs-mg-gateway.php');
+include_once (WP_PLUGIN_DIR.'/ebs-merchant-gateway-for-eshop/ebs-mg-gateway.php');
 // Setup class
-require_once(WP_PLUGIN_DIR.'/ebs-mg-gateway/ebs-class.php');  // include the class file
+require_once(WP_PLUGIN_DIR.'/ebs-merchant-gateway-for-eshop/ebs-class.php');  // include the class file
 $p = new ebs_class;             // initiate an instance of the class
 
 $p->ebs_url = 'https://secure.ebs.in/pg/ma/sale/pay';     // ebs url
