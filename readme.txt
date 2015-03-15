@@ -3,9 +3,9 @@ Contributors: L.Ch.Rajkumar
 Donate Link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Y9UFRM9QYUL5Y
 Tags: EBS Gateway, EBS for eShop
 Requires at least: 3.0 and above
-Tested up to: 3.8
-Stable Tag: 0.1
-Version: 0.1
+Tested up to: 4.0
+Stable Tag: 0.1.1
+Version: 0.1.1
 License: GPLv2 or Later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,10 +22,14 @@ Features:
 * Accepts INR "INDIAN RUPEE" currency only for doing online payment(s).
 * Have TEST & LIVE mode of operations for the Gateway to check payment work flow correctly.
 
+Bug/Error Fix:
+
+* Fixed the file path missing problem by changing URL(s) of whole plugin.
+
 == Installation ==
 
 1. Download the Plugin by searching in WP Plugins repository.
-2. Upload the "ebs-mg-gateway" folder to your site's 'wp-content/plugins' directory.
+2. Upload the "ebs-merchant-gateway-for-eshop" folder to your site's 'wp-content/plugins' directory.
 3. Activate the plugin using Activate button.
 4. Proceed for ESHOP settings page & proceed further by filling details about your EBS account & enjoy.
 
@@ -54,6 +58,10 @@ Features:
 
 == Changelog ==
 
+= 0.1.1 =
+* Fixed the file path missing problem by changing URL(s) of whole plugin.
+
+= 0.1 =
 * First version of the plugin
 
 == Support ==
