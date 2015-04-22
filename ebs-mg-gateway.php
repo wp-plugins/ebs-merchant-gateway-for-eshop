@@ -93,7 +93,19 @@ function ebs_box($eshopoptions) {
 ?>  
 	<p class="cbox"><input id="eshop_methodebs" name="eshop_method[]" onclick="return ebsscript();" type="checkbox" value="ebs"<?php if(in_array('ebs',(array)$eshopoptions['method'])) echo ' checked="checked"'; ?> /><label for="eshop_methodebs" class="eshopmethod"><?php _e('Accept payment by EBS','eshop'); ?></label></p>
 	<script>
-	function ebsscript(){if(document.getElementById('eshop_methodebs').checked){jQuery("#eshop_ebsaccount_id").attr("disabled",true);jQuery("#eshop_ebssecret_key").attr("disabled",true);jQuery("#eshop_ebsreturn_url").attr("disabled",true);jQuery("#eshop_ebsmode").attr("disabled",true);}else{jQuery("#eshop_ebsaccount_id").removeAttr("disabled");jQuery("#eshop_ebssecret_key").removeAttr("disabled");jQuery("#eshop_ebsreturn_url").removeAttr("disabled");jQuery("#eshop_ebsmode").removeAttr("disabled");}}
+	function ebsscript(){
+		if(document.getElementById('eshop_methodebs').checked){
+			jQuery("#eshop_ebsaccount_id").attr("disabled",true);
+			jQuery("#eshop_ebssecret_key").attr("disabled",true);
+			jQuery("#eshop_ebsreturn_url").attr("disabled",true);
+			jQuery("#eshop_ebsmode").attr("disabled",true);
+		}
+		else{
+			jQuery("#eshop_ebsaccount_id").removeAttr("disabled");
+			jQuery("#eshop_ebssecret_key").removeAttr("disabled");
+			jQuery("#eshop_ebsreturn_url").removeAttr("disabled");
+			jQuery("#eshop_ebsmode").removeAttr("disabled");
+		}}
 	</script>
 	<label for="eshop_accountid"><?php _e('Account ID','eshop'); ?></label><input id="eshop_ebsaccount_id" name="ebs[account_id]" type="text" value="<?php echo $eshopebs['account_id']; ?>" size="50" maxlength="50" /><br/>
 	<label for="eshop_secretkey"><?php _e('Secret Key','eshop'); ?></label><input id="eshop_ebssecret_key" name="ebs[secret_key]" type="text" value="<?php echo $eshopebs['secret_key']; ?>" size="50" maxlength="50" /><br />
